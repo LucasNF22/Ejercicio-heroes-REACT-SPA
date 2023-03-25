@@ -12,7 +12,10 @@ export const Navbar = () => {
     };
 
     return (
+        
+        
         <nav className="navbar navbar-expand-sm navbar-dark bg-dark p-2">
+            <div className='container'>
             
             <Link 
                 className="navbar-brand" 
@@ -53,6 +56,7 @@ export const Navbar = () => {
                     </button>
                 </ul>
             </div>
+        </div>
         </nav>
     )
 }

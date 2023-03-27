@@ -43,11 +43,8 @@ export const HeroCard = ({
     // </div>
 
     <div className="col-sm-12 col-md-6 col-lg-4 mb-4">
-      <div
-        className="card text-white card-has-bg click-col"
-        
-      >
-        <img src={heroUrlImage} alt={superhero} className="card-img" />
+      <div className="card text-white card-has-bg click-col" >
+        <img src={heroUrlImage} alt={superhero} className="card-img-overlay" />
         
         <div className="card-img-overlay d-flex flex-column">
           <div className="card-body">

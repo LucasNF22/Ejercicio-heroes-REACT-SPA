@@ -43,26 +43,29 @@ export const HeroCard = ({
     // </div>
 
     <div className="col-sm-12 col-md-6 col-lg-4 mb-4">
-      <div className="card text-white card-has-bg click-col" >
-        <img src={heroUrlImage} alt={superhero} className="card-img-overlay" />
+      <div className="card text-white card-has-bg click-col"
+      style={{backgroundImage:`url(${heroUrlImage})`}} 
+      >
+        <img src={heroUrlImage} alt={superhero} className="card-img d-none" />
         
         <div className="card-img-overlay d-flex flex-column">
           <div className="card-body">
-            <small className="card-meta mb-2">Thought Leadership</small>
-            <h4 className="card-title mt-0 ">
-              <a className="text-white" herf="#">
-                Goverment Lorem Ipsum Sit Amet Consectetur dipisi?
-              </a>
-            </h4>
+            <small className="card-meta mb-2 visible">{ publisher }</small>
+              <h3 className='text-white visible' >{ superhero }</h3>
             <small>
-              <i className="far fa-clock"></i> October 15, 2020
+              <p className='far fa-clock visible' >{ alter_ego }</p>
+              {
+                ( alter_ego !== characters ) && ( <p className="visible">{ characters }</p> )
+              }
             </small>
           </div>
           <div className="card-footer">
             <div className="media">
               <div className="media-body">
-                <h6 className="my-0 text-white d-block">Oz Coruhlu</h6>
-                <small>Director of UI/UX</small>
+                <h6 className="my-0 text-white d-block ">{ first_appearance }</h6>
+                <Link className="my-0 text-white d-block" to={`/hero/${ id }`} >
+                     mas...
+                </Link>
               </div>
             </div>
           </div>

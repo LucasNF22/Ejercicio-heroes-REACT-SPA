@@ -9,8 +9,13 @@ export const HeroPage = () => {
   const hero = useMemo( () => getHeroById( id ), [ id ] );
 
   const onNavigateBack = () => {
+    // const cardSlide = document.getElementById("1")
+    // console.log(cardSlide);
+    // cardSlide.classList.add("animate__animated animate__slideOutRight")
     navigate( -1 )
   }
+
+  
 
   if( !hero ) {
     return <Navigate to="/marvel" /> 
@@ -30,9 +35,9 @@ export const HeroPage = () => {
 
     //   </div>
     // </div>
-    <article className="postcard img-thumbnail justify-self-center">
+    <article id="1" className="postcard img-thumbnail justify-self-center animate__animated animate__fadeIn ">
 				
-        <img className="postcard__img img-thumbnail" src={`/assets/heroes/${ id }.jpg`} alt="Image Title" />
+        <img className="postcard__img img-thumbnail animate__animated animate__flipInY" src={`/assets/heroes/${ id }.jpg`} alt="Image Title" />
 				
         <div className="postcard__text">
 				
@@ -53,6 +58,7 @@ export const HeroPage = () => {
           <button 
             className="btn btn-outline-primary"
             onClick={ onNavigateBack }
+            
           >
             Volver
           </button>

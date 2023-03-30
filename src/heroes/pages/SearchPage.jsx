@@ -8,10 +8,13 @@ export const SearchPage = () => {
 
   const navigate = useNavigate();
   const location = useLocation();
-
+  
   const { q ='' } = queryString.parse( location.search );
-
+  // console.log(queryString.parse(location.search));
   const heroes = getHeroesByName( q );
+
+  const showSearch = ( q.length === 0 );
+  const showError = ( q.length > 0 ) && heroes.length === 0;
 
   const { searchText, onInputChange } = useForm({
     searchText: q
@@ -21,7 +24,7 @@ export const SearchPage = () => {
 
   const onSearchSubmit = (e) => {
     e.preventDefault();
-    if( searchText.trim().length <= 1 ) return;
+    // if( searchText.trim().length <= 1 ) return;
 
     navigate(`?q=${ searchText }`)
   }
@@ -29,13 +32,13 @@ export const SearchPage = () => {
 
   return (
     <>
-      <h1>Buscar</h1>
+     <div className='animate__animated animate__fadeIn'>
+
+      <h1>Encuentra tu Héroe</h1>
       <hr />
       
-      <div className="row">
-        <div className="col-5">
-          <h4>Buscando</h4>
-          <hr />
+      <div className="container ">
+        <div className="col-12">         
           <form onSubmit={ onSearchSubmit }>
             <input 
               type="text" 
@@ -46,30 +49,43 @@ export const SearchPage = () => {
               value={ searchText }
               onChange={ onInputChange }
               />
-            <button className="btn btn-outline-primary mt-1">
-              Buscar
+            <button className="btn btn-outline-primary mt-2
+            ">
+              Encuentra tu Héroe
             </button>
           </form>
         </div>
-        <div className="col-7">
-          <h4>Resultados</h4>
+        <div className="col-12">
+          <h4 className='mt-4'>Resultados</h4>
           <hr />
-          <div className="alert alert-primary">
+          
+          <div 
+            className="alert alert-primary animate__animated animate__headShake"
+            style={{ display: showSearch ? '' : 'none' }}
+          >
             Busca un Héroe
           </div>
-          <div className="alert alert-danger">
+          
+          <div 
+            className="alert alert-danger animate__animated animate__headShake"
+            style= {{ display: showError ? '' : 'none' }}
+          >
             No hay resultados con <b>{ q }</b>
           </div>
-          <div className='row rows-cols-1 w-100'>
+          
+          <div className='row rows-cols-1 row-cols-md-3 g-3 mt-1'>
             {
               heroes.map( hero => 
                 <HeroCard key={hero.id} {...hero} />
-              )
-            }
+                )
+              }
+
           </div>
+          
           
         </div>
       </div>
+              </div>
     </>
   )
 }

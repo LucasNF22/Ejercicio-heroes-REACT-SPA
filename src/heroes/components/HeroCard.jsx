@@ -41,7 +41,7 @@ export const HeroCard = ({
     //         </div>
     //     </div>
     // </div>
-    <div className="col-sm-12 col-md-6 col-lg-4 mb-4 animate__animated animate__fadeIn">
+    <div className="col-sm-12 col-md-6 col-lg-4 animate__animated animate__fadeIn">
       <Link to={`/hero/${ id }`} >
         <div className="card text-white card-has-bg click-col"
           style={{backgroundImage:`url(${heroUrlImage})`}} 

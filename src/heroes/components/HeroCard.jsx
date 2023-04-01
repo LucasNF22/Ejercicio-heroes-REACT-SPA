@@ -13,7 +13,7 @@ export const HeroCard = ({
   first_appearance,
   characters,
 }) => {
-  const heroUrlImage = `/assets/heroes/${id}.jpg`;
+  const heroUrlImage = `/public/heroes/${id}.jpg`;
 
   return (
     // <div classNameName='col' >

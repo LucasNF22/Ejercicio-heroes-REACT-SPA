@@ -37,7 +37,7 @@ export const HeroPage = () => {
     // </div>
     <article id="1" className="postcard img-thumbnail justify-self-center animate__animated animate__fadeIn ">
 				
-        <img className="postcard__img img-thumbnail animate__animated animate__flipInY" src={`/assets/heroes/${ id }.jpg`} alt="Image Title" />
+        <img className="postcard__img img-thumbnail animate__animated animate__flipInY" src={`/public/heroes/${ id }.jpg`} alt="Image Title" />
 				
         <div className="postcard__text">
 				

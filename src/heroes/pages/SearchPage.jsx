@@ -62,6 +62,7 @@ export const SearchPage = () => {
           <div 
             className="alert alert-primary animate__animated animate__headShake"
             style={{ display: showSearch ? '' : 'none' }}
+            aria-label='alert-search'
           >
             Busca un Héroe
           </div>
@@ -69,6 +70,7 @@ export const SearchPage = () => {
           <div 
             className="alert alert-danger animate__animated animate__headShake"
             style= {{ display: showError ? '' : 'none' }}
+            aria-label='alert-results'
           >
             No hay resultados con <b>{ q }</b>
           </div>

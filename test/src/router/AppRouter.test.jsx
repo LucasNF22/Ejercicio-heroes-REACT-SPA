@@ -31,13 +31,14 @@ describe("Pruebas en el <AppRouter />", () => {
         };
 
         render(
-            <MemoryRouter initialEntries={["login"]}>
-                <AuthProvider.Provider value={contextValue}>
+            <AuthProvider.Provider value={contextValue}>
+                <MemoryRouter initialEntries={["/marvel"]}>
                     <AppRouter />
-                </AuthProvider.Provider>
-            </MemoryRouter>
+                </MemoryRouter>
+            </AuthProvider.Provider>
         );
 
         expect(screen.getAllByText("Marvel").length).toBeGreaterThan(1);
     });
+    
 });

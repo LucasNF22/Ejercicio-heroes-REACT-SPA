@@ -15,7 +15,9 @@ exports[`Pruebas en <SearchPage /> Debe mostrarse correctamente con valores por 
       <div
         class="col-12"
       >
-        <form>
+        <form
+          aria-label="form"
+        >
           <input
             autocomplete="off"
             class="form-control"

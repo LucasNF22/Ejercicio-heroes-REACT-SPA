@@ -39,7 +39,7 @@ export const SearchPage = () => {
       
       <div className="container ">
         <div className="col-12">         
-          <form onSubmit={ onSearchSubmit }>
+          <form onSubmit={ onSearchSubmit } aria-label='form'>
             <input 
               type="text" 
               placeholder="Busca tu Héroe"
